@@ -1,0 +1,22 @@
+@charset "utf-8";
+.advancedFilter{
+  margin-bottom:0;
+  transition:0.3s all;
+  &.show{
+    transform:translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  &.hide{
+    transform:translateY(-50px);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.advancedFilterBtn{
+  display: inline-block;
+  color:#1890ff;
+  padding:10px 0 10px 30px;
+  background: url('./rule.png') no-repeat left center/20px 16px;
+  cursor:pointer;
+}

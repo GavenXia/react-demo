@@ -1,0 +1,291 @@
+/*
+select位置偏下问题源于ant版本，升级到3.1x即可
+*/
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+/*.ant-layout{
+  background: #fff;
+  overflow-x: hidden;
+}*/
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.ant-table{
+  border-radius:0;
+  line-height:1.2;
+}
+.ant-table table,.ant-table-small{
+  border-radius:0;
+  border:none;
+}
+.ant-table-scroll .ant-table-body{
+}
+.ant-table-fixed-left td{
+  border-left:1px solid #ccc;
+  border-right:1px solid #ccc;
+}
+.ant-table-thead th{
+  border-top:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+  text-align: center!important;
+}
+.ant-table-body td,.ant-table-thead th{
+  border-right:1px solid #ccc;
+}
+.ant-table-body td:first-child,.ant-table-thead th:first-child{
+  border-left:1px solid #ccc;
+}
+.ant-table-body td{
+  border-bottom:1px solid #ccc;
+}
+.ant-table-tbody > tr > td{
+  border-bottom:1px solid #ccc;
+}
+.ant-table-content .ant-table-row:last-child td{
+  border-bottom:1px solid #ccc!important;
+}
+
+.ant-table-small > .ant-table-content > .ant-table-body > table > .ant-table-tbody > tr > td,
+.ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-tbody > tr > td{
+  padding:3px;
+}
+.ant-table-content > .ant-table-body > table > .ant-table-thead > tr > th,
+.ant-table-middle > .ant-table-content > .ant-table-body > table > .ant-table-tbody > tr > td,
+.ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-tbody > tr > td{
+  padding:3px;
+}
+.ant-table-content > .ant-table-body > table > .ant-table-thead > tr > th,.ant-table-middle > .ant-table-content > .ant-table-body > table > .ant-table-tbody > tr > td{
+  padding:3px 3px!important;
+}
+.ant-table-small > .ant-table-content > .ant-table-header > table, .ant-table-small > .ant-table-content > .ant-table-body > table{
+  padding:0;
+}
+.ant-table-small > .ant-table-content > .ant-table-body > table > .ant-table-thead > tr > th{
+  background:#fafafa;
+}
+.ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-thead > tr > th,.ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th{
+  background:#fafafa;
+}
+.ant-table-small > .ant-table-content > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-body > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-header > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-body > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-header > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-header > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-tbody > tr > td,.ant-table-small > .ant-table-content > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-body > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-header > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-body > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-header > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-header > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-tbody > tr > td, .ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-tbody > tr > td{
+  padding:3px
+}
+
+.table-money,.text-right{
+  text-align: right;
+}
+.text-center{
+  text-align: center;
+}
+.text-left{
+  text-align: left;
+}
+/*card*/
+.ant-card-head{
+  min-height:10px;
+}
+
+/*pagination*/
+.ant-table-pagination.ant-pagination{
+  margin:8px 0;
+}
+
+/*modal*/
+.ant-modal-header{
+  padding:8px 12px !important;
+}
+.ant-modal-body{
+  padding:12px;
+  overflow: hidden;
+}
+.ant-modal-footer{
+  padding:10px 12px;
+}
+.ant-modal-close-x{
+  width:35px;
+  height:35px;
+  line-height:35px;
+}
+
+/*tab*/
+.ant-tabs-large .ant-tabs-tab{
+  padding:8px;
+}
+
+.search-card .ant-form-item{
+  margin-bottom:0;
+}
+
+/*Tab更紧凑，去除右边的填充，覆盖 .ant-tabs-nav .ant-tabs-tab 设置；modify by lchunxiu on 2018.1.10*/
+.ant-tabs-small .ant-tabs-nav .ant-tabs-tab{
+  margin-right:0;
+}
+
+/*button*/
+
+
+
+/*form item*/
+.ant-form-item-label,.ant-form-item-control{
+  line-height:35px;
+}
+/*重写分页里面的select width*/
+form .ant-pagination .ant-select{
+  width: auto;
+}
+
+/*amount table class*/
+.footer-total{
+  zoom: 1;
+  line-height: 25px;
+  color: #FF9700;
+
+  max-width: 800px;
+
+}
+.footer-total-meta {
+  zoom: 1;
+}
+.footer-total-meta-title {
+  padding-right: 16px;
+  float: left;
+  text-align: right;
+  width: 86px;
+}
+.footer-total-meta-detail {
+  overflow: hidden;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-total-meta-detail .footer-amount{
+  flex: 0 0 auto;
+}
+
+.footer-total-meta-detail .amount-code{
+  margin: 0 1px;
+  background: #f2f4f5;
+  border-radius: 3px;
+  font-size: .9em;
+  border:1px solid #eee;
+  margin-right:30px;
+  padding: 2px 4px;
+  line-height: 20px;
+}
+
+/* 表格右上方的总计样式 */
+.popover-total-container{
+  margin-left:15px;
+  color:#FF9700;
+  max-width:500px;
+  display: inline-block;
+  vertical-align:middle;
+}
+.popover-total-container>*>.anticon{
+  font-size: 16px;
+  color: #1890ff;
+  margin-right:5px;
+  vertical-align:middle;
+}
+
+.popover-total-container .total-amount{
+  vertical-align:middle;
+  margin-right: 15px;
+}
+
+/*data grid*/
+table.data-grid{
+  margin:auto;
+  width:100%
+}
+.data-grid-container .data-grid .cell{
+  vertical-align: middle;
+}
+
+
+/* 为了兼容ie下 select 错位的问题 */
+.ant-form-item{
+  margin-bottom: 0;
+}
+.ant-form-item-label, .ant-form-item-control{
+  height: 48px;
+  line-height: 48px;
+}
+.fix-ie10-formItem-fileUpload .ant-form-item-label, .fix-ie10-formItem-fileUpload .ant-form-item-control {
+  min-height: 48px;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+.fix-ie10-formItem-textArea .ant-form-item-label, .fix-ie10-formItem-textArea .ant-form-item-control{
+  height: auto;
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+.fix-ie10-formItem-textArea .has-error .ant-form-explain{
+  margin-top: 0.5px;
+}
+
+
+/* 为了设置radioGroup 垂直显示的css radioStyle */
+.radioStyle{
+  display: block;
+  height: 30px;
+  line-height: 30px;
+}
+
+/* 之前处理的兼容问题更改height=48 line-height默认35导致的垂直不对齐*/
+.btnAlignCenter{
+  height: 48px;
+  line-height: 48px;
+}
+/*高级筛选*/
+.advancedFilter{
+  margin-bottom:0;
+  transition:0.3s all;
+  position:absolute;
+  top:73px;
+  z-index:100;
+  border-top: 1px  dashed #ddd;
+  width:100%
+}
+.advancedFilter.show{
+  transform:translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+.advancedFilter.hide{
+  transform:translateY(-50%);
+  opacity: 0;
+  visibility: hidden;
+}
+.advancedFilterBtn{
+  display: inline-block;
+  color:#1890ff;
+  padding:15px 0 15px 30px;
+  background: url('./images/rule.png') no-repeat left center/20px 16px;
+  cursor:pointer;
+}

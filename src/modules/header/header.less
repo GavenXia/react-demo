@@ -1,0 +1,285 @@
+/**
+ * author       : liuliyuan
+ * createTime   : 2017/12/6 11:41
+ * description  :
+ */
+@import '~antd/lib/style/themes/default.less';
+.ant-menu-horizontal.vtax-menu-root{
+  background:transparent;
+  border-bottom:0!important;
+  line-height:64px!important;
+  font-size:16px!important;
+  >.ant-menu-submenu-selected{
+    border:none!important;
+  }
+  >.ant-menu-item-selected{
+    border:none!important;
+  }
+  >.ant-menu-item{
+    opacity:1;
+    border:none!important;
+    padding: 0 12px;
+  }
+  >.ant-menu-item-active,.ant-menu-item-selected{
+    opacity:1;
+    border:none!important;
+  }
+  .ant-menu-submenu-horizontal{
+    >.ant-menu-submenu-title{
+      opacity:1
+    }
+    >.ant-menu-submenu-title:hover{
+      opacity:1;
+      border:none!important;
+    }
+  }
+}
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
+  //background:transparent;
+}
+.vtax-menu-right{
+  float:right!important;
+  /*>.ant-menu-item,.ant-menu-submenu{
+    float:right!important;
+  }*/
+}
+
+.from-search{
+  margin:16px 0;
+  height:32px;
+
+  .ant-form-item{
+    margin-bottom: 0;
+  }
+}
+
+.set-search-width{
+  float:right;
+}
+
+.ant-menu-submenu-title{
+  .avatarImg{
+    .anticon{
+      margin-right: 0;
+    }
+  }
+
+}
+
+.header {
+  height: 64px;
+  padding: 0 12px 0 0;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  position: relative;
+}
+
+/*:global {
+  .ant-layout {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}*/
+
+.logo {
+  height: 64px;
+  line-height: 58px;
+  vertical-align: top;
+  display: inline-block;
+  padding: 0 0 0 24px;
+  cursor: pointer;
+  font-size: 20px;
+  img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.menu {
+  :global(.anticon) {
+    margin-right: 8px;
+  }
+  :global(.ant-dropdown-menu-item) {
+    width: 160px;
+  }
+}
+
+i.trigger {
+  font-size: 20px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: all 0.3s, padding 0s;
+  padding: 0 24px;
+  &:hover {
+    background: @primary-1;
+  }
+}
+
+.right {
+  float: right;
+  height: 100%;
+  .action {
+    cursor: pointer;
+    padding: 0 12px;
+    display: inline-block;
+    transition: all 0.3s;
+    height: 100%;
+    > i {
+      font-size: 16px;
+      vertical-align: middle;
+      color: @text-color;
+    }
+    &:hover,
+    &:global(.ant-popover-open) {
+      background: @primary-1;
+    }
+  }
+  .search {
+    padding: 0;
+    margin: 0 12px;
+    &:hover {
+      background: transparent;
+    }
+  }
+  .account {
+    .avatar {
+      margin: 20px 8px 20px 0;
+      color: @primary-color;
+      background: rgba(255, 255, 255, 0.85);
+      vertical-align: middle;
+    }
+  }
+}
+
+.messages{
+  padding:0 10px;
+  max-width:300px;
+  margin-bottom: 10px;
+  //border-bottom:1px solid #e8e8e8 ;
+
+  .title{
+    font-size: 14px;
+  }
+  .messages-content{
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (max-width: @screen-md) {
+  .header {
+    :global(.ant-divider-vertical) {
+      vertical-align: unset;
+    }
+    .name {
+      display: none;
+    }
+    i.trigger {
+      padding: 0 12px;
+    }
+    .logo {
+      padding-right: 12px;
+      position: relative;
+    }
+    .right {
+      position: absolute;
+      right: 12px;
+      top: 0;
+      background: #fff;
+      .account {
+        .avatar {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+
+/* 智能手机 (纵向 和 横向) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  /* Styles */
+  .set-search-width{
+    width:300px;
+  }
+}
+
+/* 智能手机 (横向) ----------- */
+@media only screen
+and (min-width : 321px) {
+  /* Styles */
+  .set-search-width{
+    width:300px;
+  }
+}
+
+/* 智能手机 (纵向) ----------- */
+@media only screen
+and (max-width : 320px) {
+  /* Styles */
+  .set-search-width{
+    width:300px;
+  }
+}
+
+/* iPad 系列 (纵向 和 横向) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+  /* Styles */
+  .set-search-width{
+    width:300px;
+  }
+}
+
+/* iPad 系列 (横向) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+  /* Styles */
+  .set-search-width{
+    width:300px;
+  }
+}
+
+/* iPad 系列 (纵向) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+  /* Styles */
+  .set-search-width{
+    width:500px;
+  }
+}
+
+/* 台式机 和 笔记本 ----------- */
+@media only screen
+and (min-width : 1224px) {
+  /* Styles */
+  .set-search-width{
+    width:500px;
+  }
+}
+
+/* 大屏幕 ----------- */
+@media only screen
+and (min-width : 1824px) {
+  /* Styles */
+  .set-search-width{
+    width:500px;
+  }
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+  /* Styles */
+  .set-search-width{
+    width:300px;
+  }
+}
+
